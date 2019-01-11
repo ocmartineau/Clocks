@@ -19,14 +19,14 @@
             <!----- This is the day of the week plus year ----->
             <div class="row">
                 <div class="col-lg">
-                    <h1 id="dayYear">Hello World</h1>
+                    <h1 id="dayYear"></h1>
                 </div>
             </div>
 
             <!---- This is the current time ---->
             <div class="row">
                 <div class="col-lg">
-                    <h1 id="currentTime">Hello World</h1>
+                    <h1 id="currentTime"></h1>
                 </div>
             </div>
 
@@ -51,16 +51,30 @@
                 console.log(date);
                 let today = days[date.getDay()];
                 console.log(today);
-                let todayMonth = months[date.getMonth()];
-                console.log(todayMonth);
-                let todayNumber = date.getDate();
-                console.log(todayNumber);
-                let hour = date.getHours();
-                console.log(hour);
-                let mins = date.getMinutes();
-                console.log(mins);
+                let time = date.toLocaleTimeString();
+
+                // const clockInfo = {
+                //     date,
+                //     today,
+                //     todayMonth,
+                //     todayNumber,
+                //     hour,
+                //     mins}
+
+                let clockWork = setInterval(setClock,1000);
+
+                function setClock() {
+                    let date = new Date();
+                    let time = date.toLocaleTimeString();
+                    $("#currentTime").empty();
+                    $("#currentTime").append(time);
+
+                }
 
 
+                // $("#dayYear").append(`${today} ${todayMonth} ${todayNumber}`);
+
+                setClock();
 
 
             })
