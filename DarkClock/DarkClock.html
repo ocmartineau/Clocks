@@ -52,8 +52,11 @@
                 let today = days[date.getDay()];
                 console.log(today);
                 let time = date.toLocaleTimeString();
+                let month = months[date.getMonth()]
+                let monthNum = date.getDate();
+                console.log(monthNum);
 
-                $("#dayYear").append(today);
+                $("#dayYear").append(`Today is ${today}, ${month} ${monthNum}`);
 
                 // const clockInfo = {
                 //     date,
@@ -68,15 +71,12 @@
                 function setClock() {
                     let date = new Date();
                     let time = date.toLocaleTimeString();
-                    console.log(time);
+                    // console.log(time);
                     $("#currentTime").empty();
                     $("#currentTime").append(time);
 
                 }
 
-
-
-                // $("#dayYear").append(`${today} ${todayMonth} ${todayNumber}`);
 
                 setClock();
 
