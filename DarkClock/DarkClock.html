@@ -53,6 +53,8 @@
                 console.log(today);
                 let time = date.toLocaleTimeString();
 
+                $("#dayYear").append(today);
+
                 // const clockInfo = {
                 //     date,
                 //     today,
@@ -66,10 +68,12 @@
                 function setClock() {
                     let date = new Date();
                     let time = date.toLocaleTimeString();
+                    console.log(time);
                     $("#currentTime").empty();
                     $("#currentTime").append(time);
 
                 }
+
 
 
                 // $("#dayYear").append(`${today} ${todayMonth} ${todayNumber}`);
